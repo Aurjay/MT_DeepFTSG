@@ -1,3 +1,8 @@
+# This script generates a trimap using background subtraction and flux calculation images.
+# It combines these two types of masks to create a trimap with foreground, background, and unknown regions.
+# To run it, ensure you have OpenCV installed and provide the correct paths for background subtraction (BGS),
+# flux (FLUX) images, and the output folder for trimaps.
+
 import cv2
 import os
 import numpy as np
@@ -28,9 +33,9 @@ def generate_trimap(bg_img, flux_img, prev_mask):
 # Main function
 def main():
     # Folder containing background subtraction (bgs) and flux images
-    bgs_folder = r'C:\Users\dgn\Desktop\cdnet-test-videos\peopleInShadee\BGS'
-    flux_folder = r'C:\Users\dgn\Desktop\cdnet-test-videos\peopleInShadee\FLUX'
-    output_folder = r'C:\Users\dgn\Desktop\DeepFTSG-main\DeepFTSG-main\src\output\trimap'
+    bgs_folder = r'Path to background subtraction images'
+    flux_folder = r'Path to flux images'
+    output_folder = r'Path to output folder'
 
     # Get list of background subtraction and flux images
     bgs_images = sorted(os.listdir(bgs_folder))

@@ -1,3 +1,7 @@
+# This script calculates optical flow between consecutive frames in a folder of images,
+# saving the magnitude of the flow as images in an output folder.
+# To run it, ensure you have OpenCV installed and provide the correct paths for input images and output folder.
+
 import cv2
 import os
 import numpy as np
@@ -65,6 +69,6 @@ def calculate_optical_flow(input_folder, output_folder):
         print(f"Average time taken for flux calculation per frame: {average_time:.4f} seconds")
 
 if __name__ == "__main__":
-    input_folder = r"I:\Werkstudenten\Deepak_Raj\DATASETS\Private\Original_frames\SiemensGehen20m"
-    output_folder = r"I:\Werkstudenten\Deepak_Raj\DATASETS\Results_all_models\DeepFTSG\SiemensGehen20m\Flux"
+    input_folder = r"Path to input folder"
+    output_folder = r"Path to output folder"
     calculate_optical_flow(input_folder, output_folder)

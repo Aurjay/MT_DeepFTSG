@@ -1,3 +1,6 @@
+# This script performs background subtraction on images in a specified input folder and saves the results in an output folder.
+# To run it, ensure you have OpenCV installed and provide the correct paths for the input and output folders.
+
 import cv2
 import os
 import time
@@ -45,6 +48,6 @@ def perform_background_subtraction(input_folder, output_folder):
         print(f"Average time taken for background subtraction per image: {average_time:.4f} seconds")
 
 if __name__ == "__main__":
-    input_folder = r"I:\Werkstudenten\Deepak_Raj\DATASETS\Private\Original_frames\SiemensGehen20m"
-    output_folder = r"I:\Werkstudenten\Deepak_Raj\DATASETS\Results_all_models\DeepFTSG\SiemensGehen20m\BGS"
+    input_folder = r"Path to input folder"
+    output_folder = r"Path to output folder"
     perform_background_subtraction(input_folder, output_folder)

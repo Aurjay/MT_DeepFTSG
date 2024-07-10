@@ -1,19 +1,23 @@
+# This script performs background subtraction, optical flow calculation, and semantic segmentation
+# using the DeepFTSG model on a sequence of images. It processes each pair of consecutive frames
+# to generate and save semantic segmentation masks.
+
+# Ensure you have the necessary libraries installed and the DeepFTSG model weights available.
+
 import torch
 import numpy as np
 import glob
 import os
 import imageio
-import torch.nn.functional as F
-import time
-import torch.hub
 import cv2
+import re
+import time
 from datetime import timedelta
 from torchvision import transforms
-from nets.DeepFTSG_2 import DeepFTSG
-import re
+from nets.DeepFTSG_2 import DeepFTSG  # Import your DeepFTSG model here
 
 # Device configuration
-device = torch.device('cpu')
+device = torch.device('cpu')  # Set device to CPU
 print(device)
 
 # Model parameters
@@ -31,14 +35,14 @@ se_resnet_hub_model = torch.hub.load('moskomule/senet.pytorch', 'se_resnet50', p
 se_resnet_base_layers = list(se_resnet_hub_model.children())
 
 # Initialize the DeepFTSG model
-num_class = 1
+num_class = 1  # Number of classes (for binary segmentation)
 model = DeepFTSG(num_class, se_resnet_base_layers).to(device)
-model.load_state_dict(torch.load(r'C:\Users\dgn\Desktop\DeepFTSG-main\DeepFTSG-main\src\models\DeepFTSG_2.pt', map_location=device))
+model.load_state_dict(torch.load(r'Path to \src\models\DeepFTSG_2.pt', map_location=device))
 model.eval()
 
 # Define paths
-folder_data_path = r'I:\Werkstudenten\Deepak_Raj\DATASETS\Public\Public\cars-illumination\*.jpg'
-mask_dir = r'C:\Users\dgn\Desktop\DeepFTSG-main\DeepFTSG-main\test_output\cars-illumination'
+folder_data_path = r'Path to the input images \*.jpg'
+mask_dir = r'Path to output mask'
 os.makedirs(mask_dir, exist_ok=True)
 
 # Natural sort function

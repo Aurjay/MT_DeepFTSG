@@ -1,3 +1,6 @@
+# This script converts all PNG images in a specified folder to 24-bit RGB format, removing any alpha channels.
+# To run it, ensure you have the Pillow library installed and provide the correct path to the folder containing the images.
+
 from PIL import Image
 import os
 
@@ -23,5 +26,5 @@ def convert_images_to_24bit(folder_path):
         image.save(full_path)
 
 # Example usage:
-folder_path = r'C:\Users\dgn\Desktop\DeepFTSG-main\DeepFTSG-main\src\datasets\test\Prison_way_f\DATASET\test'
+folder_path = r'Path to folder containing PNG images'
 convert_images_to_24bit(folder_path)

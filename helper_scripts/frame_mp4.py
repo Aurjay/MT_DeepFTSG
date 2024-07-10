@@ -1,8 +1,12 @@
+# This script reads frames from a directory and writes them to an MP4 video file.
+# Make sure you have OpenCV installed and provide the correct paths for input frames
+# and the output video file path.
+
 import cv2
 import os
 
 # Directory containing the frames
-frames_dir = r'C:\Users\dgn\Desktop\cdnet-test-videos\badmiton\input\input'
+frames_dir = r'Path\to\input\folder'
 
 # Output video file path
 output_video_path = 'original.mp4'

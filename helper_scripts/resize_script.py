@@ -1,3 +1,8 @@
+# This script resizes all PNG and JPG images in a specified folder to a target width and height,
+# using Lanczos resampling. Resized images are saved to an output folder.
+# To run it, ensure you have the Pillow library installed and provide the correct paths for
+# input images and the output folder.
+
 import os
 from PIL import Image
 
@@ -23,7 +28,7 @@ def resize_images(image_folder, output_folder, target_width=380, target_height=2
         image = Image.open(image_path)
 
         # Resize the image to the target dimensions
-        resized_image = image.resize((target_width, target_height), Image.Resampling.LANCZOS)
+        resized_image = image.resize((target_width, target_height), Image.LANCZOS)
 
         # Construct the output path
         output_path = os.path.join(output_folder, file)
@@ -37,7 +42,7 @@ def resize_images(image_folder, output_folder, target_width=380, target_height=2
     return resized_paths
 
 # Example usage:
-input_folder = r'C:\Users\dgn\Desktop\CVATVideoSegmentationsByJaved\badmintonSegmentation'
-output_folder = r'C:\Users\dgn\Desktop\CVATVideoSegmentationsByJaved\badmintonSegmentation_resized'
+input_folder = r'Path\to\input\folder'
+output_folder = r'Path\to\output\folder'
 resized_paths = resize_images(input_folder, output_folder)
 print("Resized images saved to:", resized_paths)

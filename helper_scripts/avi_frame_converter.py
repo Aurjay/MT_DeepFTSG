@@ -1,3 +1,6 @@
+# This script extracts frames from a given video file and saves them as JPG images in a specified output folder.
+# To run it, ensure you have OpenCV installed and provide the correct paths for the video file and output folder.
+
 import cv2
 import os
 
@@ -25,7 +28,7 @@ def video_to_frames(video_path, output_folder, frame_prefix):
         
         # Check if frame is retrieved successfully
         if ret:
-            # Resize frame to 1920x1080
+            # Resize frame to 380x244
             frame = cv2.resize(frame, (380, 244))
 
             # Save frame as JPG image with custom naming convention
@@ -42,13 +45,13 @@ def video_to_frames(video_path, output_folder, frame_prefix):
 
 if __name__ == "__main__":
     # Input video file path
-    video_path = r"\\vm-mue-filer01\ips_videostorage\Video-Sammlungen\TUGraz\indoor-cam-132.avi"
+    video_path = r"Path to video file"
     
     # Output folder to save frames
-    output_folder = r"C:\Users\dgn\Desktop\Internal_test_original_frames\indoor-cam-132"
+    output_folder = r"Path to output folder"
     
     # Frame name prefix
-    frame_prefix = "indoor-cam-132"
+    frame_prefix = "Prefix for frame names"
     
     # Convert video to frames
     video_to_frames(video_path, output_folder, frame_prefix)

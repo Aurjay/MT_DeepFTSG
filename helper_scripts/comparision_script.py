@@ -1,3 +1,8 @@
+# This script calculates precision, recall, and F1 score metrics for images in a specified input folder
+# compared against corresponding ground truth images in another folder. Results are saved in an XML file.
+# To run it, ensure you have OpenCV installed and provide the correct paths for input images, ground truth images,
+# and the output XML file.
+
 import os
 import cv2
 import numpy as np
@@ -5,7 +10,6 @@ import xml.etree.ElementTree as ET
 
 def calculate_metrics(image, ground_truth):
     # Convert images to grayscale
-    print('Calculating metrics')
     image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     ground_truth_gray = cv2.cvtColor(ground_truth, cv2.COLOR_BGR2GRAY)
 
@@ -67,10 +71,10 @@ def test(input_folder, ground_truth_folder, output_xml):
     # Write XML tree to file
     tree = ET.ElementTree(root)
     tree.write(output_xml)
-    print('xml file generated')
+    print('XML file generated')
 
 if __name__ == "__main__":
-    input_folder = r"C:\Users\dgn\Desktop\DeepFTSG-main\DeepFTSG-main\src\output\Outdoor_road\resized_comparision\Javed"
-    ground_truth_folder = r"C:\Users\dgn\Desktop\DeepFTSG-main\DeepFTSG-main\src\output\Outdoor_road\resized_comparision\GT"
-    output_xml = r"C:\Users\dgn\Desktop\DeepFTSG-main\DeepFTSG-main\helper_scripts\javed_metrics_v2.xml"
+    input_folder = r"Path to input folder"
+    ground_truth_folder = r"Path to ground truth folder"
+    output_xml = r"Path to output XML file"
     test(input_folder, ground_truth_folder, output_xml)
