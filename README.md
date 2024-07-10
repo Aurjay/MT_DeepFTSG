@@ -13,7 +13,7 @@ conda install --file requirements.txt
 
 ## Usage
 Change the required path in the file 'src/Infer_DeepFTSG_2_all_in_one_final_script.py'
-Please download the required pretrained weights from https://github.com/CIVA-Lab/DeepFTSG and specify the appropriatte folder in 'src/Infer_DeepFTSG_2_all_in_one_final_script.py' 
+Please download the required pretrained weights from https://github.com/CIVA-Lab/DeepFTSG and specify the appropriate folder in 'src/Infer_DeepFTSG_2_all_in_one_final_script.py' 
 
 python src/Infer_DeepFTSG_2_all_in_one_final_script.py
 
