@@ -1,0 +1,15 @@
+certifi 
+flit_core 
+imageio
+mkl-fft
+mkl-random 
+numpy
+opencv-python
+pandas
+Pillow
+python-dateutil
+pytz
+six 
+torch==1.7.1
+tqdm
+typing_extensions 

@@ -1,0 +1,13 @@
+finalenv
+weights
+pyvenv.cfg
+README.md
+deepftsg_output.mp4
+javed_output.mp4
+original.mp4
+Lib
+src/datasets
+src/models
+src/output
+test_output
+src/models/DeepFTSG_2.pt
